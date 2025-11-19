@@ -6,14 +6,21 @@ O programa lê palavras-chave e um texto, identifica em quais linhas cada termo 
 📂 Estrutura Geral
 src/
  ├── Main.java
+ 
  ├── ProcessadorTexto.java
+ 
  ├── Palavra.java
+ 
  ├── ListaOcorrencias.java
+ 
  ├── ArvoreBinariaPalavras.java
+ 
  └── TabelaHashPalavras.java
 
 arquivos/
+ 
  ├── texto.txt
+ 
  └── palavras-chave.txt
 
 indice-remissivo.txt
