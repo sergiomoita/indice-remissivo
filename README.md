@@ -5,6 +5,7 @@ O programa lê palavras-chave e um texto, identifica em quais linhas cada termo 
 
 📂 Estrutura Geral
 src/
+ 
  ├── Main.java
  
  ├── ProcessadorTexto.java
