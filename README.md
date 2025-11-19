@@ -1,55 +1,118 @@
 📘 Índice Remissivo em Java
 
-Projeto que lê um conjunto de palavras-chave e um texto, identifica em quais linhas cada termo aparece e gera um índice remissivo ordenado alfabeticamente.
-Implementado usando Tabela Hash, Árvores Binárias de Busca (ABB) e Listas Encadeadas, sem uso de coleções prontas.
+Projeto que implementa um gerador de índice remissivo ordenado alfabeticamente, utilizando estruturas manuais de dados: Tabela Hash, Árvore Binária de Busca (ABB) e Lista Encadeada.
+O programa lê palavras-chave e um texto, identifica em quais linhas cada termo aparece e gera um arquivo final indice-remissivo.txt.
+
+📂 Estrutura Geral
+src/
+ ├── Main.java
+ ├── ProcessadorTexto.java
+ ├── Palavra.java
+ ├── ListaOcorrencias.java
+ ├── ArvoreBinariaPalavras.java
+ └── TabelaHashPalavras.java
+
+arquivos/
+ ├── texto.txt
+ └── palavras-chave.txt
+
+indice-remissivo.txt
+README.md
 
 🚀 Funcionalidades
 
 Leitura de palavras-chave separadas por vírgula
 
-Leitura completa do texto linha a linha
+Processamento completo do texto linha por linha
 
-Normalização de acentos, hífen e plural
+Tratamento de acentos, hífen e plural (regular e irregular)
 
-Hash por inicial da palavra
+Hash por letra inicial (a–z)
 
 ABB para ordenação automática
 
-Lista encadeada de ocorrências
+Lista encadeada para armazenar ocorrências sem duplicatas
 
-Geração do arquivo indice-remissivo.txt
+Geração de índice remissivo ordenado alfabeticamente
 
-📂 Estruturas Utilizadas
+🧠 Estruturas Utilizadas
+🔹 Palavra
 
-ListaOcorrencias → armazena as linhas
+Guarda:
 
-Palavra → guarda original + normalizada
+a forma original
 
-ArvoreBinariaPalavras → ordenação
+a forma normalizada
 
-TabelaHashPalavras → distribuição por letra
+a lista encadeada de ocorrências
 
-ProcessadorTexto → lógica principal
+🔹 ListaOcorrencias
+
+Lista simplesmente encadeada que armazena números de linha.
+
+🔹 ArvoreBinariaPalavras
+
+Responsável pela inserção, busca e ordenação das palavras.
+
+🔹 TabelaHashPalavras
+
+Tabela com 26 árvores (a…z), cada uma contendo as palavras de uma letra inicial.
+
+🔹 ProcessadorTexto
+
+Executa:
+
+normalização
+
+leitura da chave
+
+leitura do texto
+
+busca
+
+registro de ocorrência
+
+geração do índice
+
+🔹 Main
+
+Controla o fluxo principal do programa.
+
+📥 Arquivos de Entrada
+palavras-chave.txt
+
+Palavras separadas por vírgula:
+
+programming, information, human-engineered, lápis, mãos
+
+texto.txt
+
+Arquivo de texto comum, analisado linha por linha.
+
+📄 Exemplo de Saída
+cão: 8
+carros: 1
+e-mails: 7
+human-engineered: 5
+informação: 4
+lápis: 6
+mãos: 2
+ônibus: 3
+papéis: 6
 
 ▶️ Como Executar
-
-Coloque texto.txt e palavras-chave.txt na pasta do projeto
-
-Compile:
-
+1. Compile o projeto:
 javac src/*.java
 
-
-Execute:
-
+2. Execute:
 java src/Main
 
+3. Resultado:
 
-O resultado estará em:
+Gerado automaticamente no arquivo:
 
 indice-remissivo.txt
 
-📄 Exemplo de Saída
-informação: 4
-human-engineered: 5
-papéis: 6
+🧾 Licença
+
+Uso livre para fins acadêmicos.
