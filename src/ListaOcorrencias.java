@@ -1,6 +1,5 @@
 public class ListaOcorrencias {
 
-    // Nodo interno
     private static class Nodo {
         int linha;
         Nodo proximo;

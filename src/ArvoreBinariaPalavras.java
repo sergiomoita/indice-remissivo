@@ -3,7 +3,6 @@ import java.io.IOException;
 
 public class ArvoreBinariaPalavras {
 
-    // ====== NODO DA ABB ======
     class Nodo {
         public Palavra elemento;
         public Nodo esquerdo;
@@ -33,9 +32,6 @@ public class ArvoreBinariaPalavras {
         return this.nElementos;
     }
 
-    // =====================================================================
-    // INSERIR OU ATUALIZAR PALAVRAS DO TEXTO
-    // =====================================================================
     public void inserirOuAtualizar(String original, String normalizado, int linha) {
 
         Palavra nova = new Palavra(original, normalizado);
@@ -67,10 +63,6 @@ public class ArvoreBinariaPalavras {
         return nodo;
     }
 
-
-    // =====================================================================
-    // BUSCA USANDO APENAS A PALAVRA NORMALIZADA
-    // =====================================================================
     public Palavra buscar(String normalizado) {
         return buscar(this.raiz, normalizado);
     }
@@ -90,10 +82,6 @@ public class ArvoreBinariaPalavras {
             return nodo.elemento;
     }
 
-
-    // =====================================================================
-    // IMPRIMIR EM ORDEM (para debug)
-    // =====================================================================
     public void imprimirEmOrdem() {
         imprimirEmOrdem(this.raiz);
     }
@@ -107,9 +95,6 @@ public class ArvoreBinariaPalavras {
     }
 
 
-    // =====================================================================
-    // IMPRIMIR EM ORDEM NO ARQUIVO (ÍNDICE REMISSIVO)
-    // =====================================================================
     public void imprimirEmOrdem(BufferedWriter bw) throws IOException {
         imprimirEmOrdem(this.raiz, bw);
     }

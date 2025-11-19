@@ -3,8 +3,8 @@ import java.text.Normalizer;
 
 public class ProcessadorTexto {
 
-    private TabelaHashPalavras tabela;       // guarda TODAS as palavras do texto
-    private ArvoreBinariaChaves arvoreChaves; // guarda SOMENTE palavras-chave
+    private TabelaHashPalavras tabela;
+    private ArvoreBinariaChaves arvoreChaves;
 
     public ProcessadorTexto() {
         this.tabela = new TabelaHashPalavras();
@@ -19,9 +19,6 @@ public class ProcessadorTexto {
         return this.arvoreChaves;
     }
 
-    // ===============================================================
-    // 1) LER TEXTO PRINCIPAL
-    // ===============================================================
     public void lerArquivoTexto(String caminhoArquivo) {
 
         try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
@@ -50,10 +47,6 @@ public class ProcessadorTexto {
         }
     }
 
-
-    // ===============================================================
-    // 2) LER PALAVRAS-CHAVE (separadas por vírgula)
-    // ===============================================================
     public void lerPalavrasChave(String caminho) {
 
         try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
@@ -81,9 +74,6 @@ public class ProcessadorTexto {
         }
     }
 
-    // ===============================================================
-    // 3) GERAR ÍNDICE — AGORA USANDO APENAS A ABB DE PALAVRAS-CHAVE
-    // ===============================================================
     public void gerarIndiceRemissivo(String caminhoSaida) {
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(caminhoSaida))) {
@@ -97,9 +87,6 @@ public class ProcessadorTexto {
         }
     }
 
-    // ===============================================================
-    // FUNÇÃO: REMOVER PONTUAÇÃO E ACENTOS
-    // ===============================================================
     private String limparLinha(String linha) {
 
         linha = Normalizer.normalize(linha, Normalizer.Form.NFD)
@@ -112,9 +99,6 @@ public class ProcessadorTexto {
         return linha;
     }
 
-    // ===============================================================
-    // FUNÇÃO: NORMALIZAR PLURAIS (versão melhorada)
-    // ===============================================================
     private String normalizarPalavra(String p) {
 
         p = p.trim().toLowerCase();

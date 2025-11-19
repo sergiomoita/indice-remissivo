@@ -9,9 +9,6 @@ public class TabelaHashPalavras {
         }
     }
 
-    // ======================================================
-    // FUNÇÃO HASH — retorna índice de 0 a 25 (a → z)
-    // ======================================================
     private int hash(String palavraNormalizada) {
 
         if (palavraNormalizada == null || palavraNormalizada.isEmpty()) return 0;
@@ -23,9 +20,6 @@ public class TabelaHashPalavras {
         return c - 'a';
     }
 
-    // ======================================================
-    // INSERIR OU ATUALIZAR PALAVRA DO TEXTO
-    // ======================================================
     public void inserirOuAtualizar(String original, String normalizado, int linha) {
 
         int indice = hash(normalizado);
@@ -33,9 +27,6 @@ public class TabelaHashPalavras {
         tabela[indice].inserirOuAtualizar(original, normalizado, linha);
     }
 
-    // ======================================================
-    // BUSCAR UMA PALAVRA NORMALIZADA NA TABELA
-    // ======================================================
     public Palavra buscar(String normalizado) {
 
         int indice = hash(normalizado);
@@ -43,9 +34,6 @@ public class TabelaHashPalavras {
         return tabela[indice].buscar(normalizado);
     }
 
-    // ======================================================
-    // ACESSAR UMA DAS 26 ÁRVORES
-    // ======================================================
     public ArvoreBinariaPalavras getArvore(int i) {
         if (i < 0 || i >= 26) return null;
         return tabela[i];
