@@ -1,0 +1,9 @@
+cão: 8
+carros: 1
+e-mails: 7
+human-engineered: 5
+informação: 4
+lápis: 6
+mãos: 2
+ônibus: 3
+papéis: 6
